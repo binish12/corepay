@@ -1,0 +1,13 @@
+FROM confluentinc/cp-kafka-connect-base:7.5.0
+
+USER root
+
+RUN confluent-hub install --no-prompt confluentinc/kafka-connect-s3:latest
+
+RUN mkdir -p /usr/share/java/debezium-connector-postgres && \
+    curl -fSL -o /tmp/dbz.tar.gz \
+    https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/2.5.4.Final/debezium-connector-postgres-2.5.4.Final-plugin.tar.gz && \
+    tar -xzf /tmp/dbz.tar.gz -C /usr/share/java/ && \
+    rm /tmp/dbz.tar.gz
+
+USER appuser
