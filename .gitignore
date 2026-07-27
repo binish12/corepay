@@ -3,4 +3,4 @@
 __pycache__/
 .terraform/
 *.tfstate*
-venv/
+venv/venv/
