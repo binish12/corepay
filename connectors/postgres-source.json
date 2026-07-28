@@ -1,0 +1,13 @@
+{
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.user": "bankadmin",
+    "database.dbname": "corebank",
+    "topic.prefix": "corepay",
+    "slot.name": "corepay_txn_slot",
+    "database.hostname": "postgres",
+    "database.password": "bankpass",
+    "name": "corepay-transactions-connector",
+    "table.include.list": "bank.transactions",
+    "database.port": "5432",
+    "plugin.name": "pgoutput"
+}
